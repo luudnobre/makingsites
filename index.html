@@ -8,7 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: 'HACK', monospace;
+            font-family: Arial, sans-serif;
         }
 
         .background {
@@ -17,6 +17,7 @@
             background-size: 200% 100%;
             animation: gradient 3s linear infinite;
             text-align: center;
+            padding: 20px;
         }
 
         .top-bar {
@@ -50,6 +51,30 @@
             animation: vibrate 1s infinite;
         }
 
+        .video-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .button-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .green-button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+
+        .green-button:hover {
+            transform: scale(1.05);
+        }
+
         @keyframes gradient {
             0% {
                 background-position: 0 0;
@@ -76,29 +101,21 @@
     <div class="background">
         <div class="top-bar">
             <div id="user-count">
-                275 pessoas de <span id="location">estão nesta página agora!</span>
+                275 pessoas estão nessa página agora!
             </div>
         </div>
-
         <h1 class="headline">
-            Milhões de pessoas estão mudando de vida com esse método…
-            <a href="link-para-o-video">
+            Tudo mudou quando eu fiz esse método... Clique no vídeo abaixo
+            <a href="https://pay.kiwify.com.br/Zq9zquU?afid=CvBcpClA">
                 <span class="arrow">➤</span>
             </a>
         </h1>
+        <div class="video-container">
+            <iframe width="425" height="756" src="https://www.youtube.com/embed/Omp-C9ol03A" title="Cópia de Pou Pr.poderoso Castiga" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="button-container">
+            <a class="green-button" href="https://pay.kiwify.com.br/Zq9zquU?afid=CvBcpClA">Clique para comprar</a>
+        </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Solicitar permissão de localização
-            if ("geolocation" in navigator) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    const locationElement = document.getElementById("location");
-                    // Aqui você pode usar serviços de geolocalização para obter a cidade com base nas coordenadas
-                    // Neste exemplo, usaremos uma localização fictícia.
-                    locationElement.textContent = "Sua Cidade";
-                });
-            }
-        });
-    </script>
 </body>
 </html>
